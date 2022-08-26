@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <title>JustStreamIt</title>
+    </head>
+    
+    <body>
+        <div id="bloc_page">
+            <header>
+                <div id="titre_principal">
+                    <div id="logo">
+                        <img src="images/logo-juststream.png" alt="Logo de JustStreamIt" />
+                    </div>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#">Accueil</a></li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <div id="thebestfilm">
+                <h1>Le meilleur film</h1>
+                <a href="#"><img class="imagebest" src="" alt="" /></a>
+            </div>
+
+
+            <div id="bestfilms">
+                <input class="bouton" type="button" value="Prev" id="b1" onclick="changeImages('bestfilms',this.value,'bestfilms');"/>
+                <input class="bouton" type="button" value="Next" id="b1" onclick="changeImages('bestfilms',this.value,'bestfilms');"/>
+                <h1>Films les mieux notés</h1>
+                <ul>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                </ul>
+            </div>
+            
+            <div id="categorie1">
+                <input class="bouton" type="button" value="Prev" id="b1" onclick="changeImages('categorie1',this.value,'Adventure');"/>
+                <input class="bouton" type="button" value="Next" id="b1" onclick="changeImages('categorie1',this.value,'Adventure');"/>
+                <h1>Adventure</h1>
+                <ul>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                </ul>
+            </div>
+
+            <div id="categorie2">
+                <input class="bouton" type="button" value="Prev" id="b1" onclick="changeImages('categorie2',this.value,'Mystery');"/>
+                <input class="bouton" type="button" value="Next" id="b1" onclick="changeImages('categorie2',this.value,'Mystery');"/>
+                <h1>Mystery</h1>
+                <ul>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                </ul>
+            </div>
+
+            <div id="categorie3">
+                <input class="bouton" type="button" value="Prev" id="b1" onclick="changeImages('categorie3',this.value,'History');"/>
+                <input class="bouton" type="button" value="Next" id="b1" onclick="changeImages('categorie3',this.value,'History');"/>
+                <h1>History</h1>
+                <ul>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                    <li><a href="#"><img class="imagehead" src="" alt="" /></a></li>
+                </ul>
+            </div>
+
+<!-- Trigger/Open The Modal
+<button id="myBtn">Open Modal</button>
+-->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img id="modalimg" class="" src="" alt="" />
+    <h2>Title</h2><p id="modaltitle"></p>
+    <h2>Genre</h2><p id="modalgenre"></p>
+    <h2>Year</h2><p id="modalyear"></p>
+    <h2>Votes</h2><p id="modalvotes"></p>
+    <h2>IMDB score</h2><p id="modalimdbscore"></p>
+    <h2>Directors</h2><p id="modaldirectors"></p>
+    <h2>Actors</h2><p id="modalactors"></p>
+  </div>
+
+</div>
+
+            <footer>
+                <div id="JustFoot">
+                    <p>Just Stream it - All rights reserved</p>
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="scripts.js"></script>
+    </body>
+</html>
