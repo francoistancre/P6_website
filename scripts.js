@@ -5,24 +5,49 @@ const getData = async (url) => {
 // Modal fonction
 function OpenModal(data) {
     modal.style.display = "block";
-    //console.log(data);
+    console.log(data);
+    axios.get(data.url).then(resp => {
 
-    let modalimg = document.getElementById("modalimg");
-    modalimg.src = data.image_url;
-    let modaltitle = document.getElementById("modaltitle");
-    modaltitle.innerHTML = data.title;
-    let modalgenre = document.getElementById("modalgenre");
-    modalgenre.innerHTML = data.genres;
-    let modalyear = document.getElementById("modalyear");
-    modalyear.innerHTML = data.year;
-    let modalvotes = document.getElementById("modalvotes");
-    modalvotes.innerHTML = data.votes;
-    let modalimdbscore = document.getElementById("modalimdbscore");
-    modalimdbscore.innerHTML = data.imdb_score;
-    let modaldirectors = document.getElementById("modaldirectors");
-    modaldirectors.innerHTML = data.directors;
-    let modalactors = document.getElementById("modalactors");
-    modalactors.innerHTML = data.actors;
+        //console.log(resp.data);
+        data = resp.data;
+
+        let modalimg = document.getElementById("modalimg");
+        modalimg.src = data.image_url;
+
+        let modaltitle = document.getElementById("modaltitle");
+        modaltitle.innerHTML = data.title;
+
+        let modalgenre = document.getElementById("modalgenre");
+        modalgenre.innerHTML = data.genres;
+
+        let modalyear = document.getElementById("modalyear");
+        modalyear.innerHTML = data.year;
+
+        let modalvotes = document.getElementById("modalvotes");
+        modalvotes.innerHTML = data.votes;
+
+        let modalimdbscore = document.getElementById("modalimdbscore");
+        modalimdbscore.innerHTML = data.imdb_score;
+
+        let modaldirectors = document.getElementById("modaldirectors");
+        modaldirectors.innerHTML = data.directors;
+
+        let modalactors = document.getElementById("modalactors");
+        modalactors.innerHTML = data.actors;
+
+        let modalduree = document.getElementById("modalduree");
+        modalduree.innerHTML = data.duration;
+
+        let modalorigine = document.getElementById("modalorigine");
+        modalorigine.innerHTML = data.countries;
+
+        let modalresultat = document.getElementById("modalresultat");
+        modalresultat.innerHTML = data.worldwide_gross_income;
+        
+        let modalresume = document.getElementById("modalresume");
+        modalresume.innerHTML = data.long_description;
+
+    });
 }
 
 let Drama1 = 'http://localhost:8000/api/v1/titles/?genre=Drama&page=1';
@@ -92,6 +117,8 @@ async function changeImages(divname, position, categorie) {
             (function(t){
                 listImg[i].addEventListener("click", function() {
                   //console.log(t)
+
+                  
                   OpenModal(t);
                 })
               })(t)
@@ -99,7 +126,8 @@ async function changeImages(divname, position, categorie) {
         }
     } else {
         listImg[0].src = tableau[0].image_url;
-        listImg[0].onclick = function() { OpenModal(tableau[0]); };
+        listImg[0].onclick = function() { 
+            OpenModal(tableau[0]); };
 
     }
     //document.getElementById('bestfilms').innerHTML = "You pressed " + value;
